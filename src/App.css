@@ -27,6 +27,19 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.beanie {
+  padding: 1rem;
+  border: 2px dotted pink;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.beanies img {
+  width: 200px;
 }
 
 .beanie-detail {
@@ -37,7 +50,7 @@ body {
 
 .beanie-detail img {
   cursor: pointer;
-  width: 400px;
+  width: 200px;
 }
 
 .beanie-detail .beanie-data {
