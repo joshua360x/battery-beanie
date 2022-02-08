@@ -10,19 +10,19 @@ function App() {
   const [perPage, setPerPage] = useState(30);
   // const perPage = 500;
 
-  function maxNumber(page, allBeanies, perPage) {
-    // const allBeanies = await getALLBeanieBabies();
-    const calc = Math.floor(allBeanies / perPage);
-    console.log('🚀 ~ file: BeaniesPage.js ~ line 14 ~ maxNumber ~ calc', calc);
-    if (page >= calc) {
-      console.log('is it true?');
-      return true;
-    } else {
-      console.log('is it false?');
-      return false;
-    }
-    // page > maxNumber() && true
-  }
+  // function maxNumber(page, allBeanies, perPage) {
+  //   // const allBeanies = await getALLBeanieBabies();
+  //   const calc = Math.floor(allBeanies / perPage);
+  //   console.log('🚀 ~ file: BeaniesPage.js ~ line 14 ~ maxNumber ~ calc', calc);
+  //   if (page >= calc) {
+  //     console.log('is it true?');
+  //     return true;
+  //   } else {
+  //     console.log('is it false?');
+  //     return false;
+  //   }
+  //   // page > maxNumber() && true
+  // }
 
   useEffect(() => {
     async function getAllBeanies() {

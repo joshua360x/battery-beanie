@@ -13,7 +13,7 @@ export default function BeanieDetail() {
     // you'll need to define a fetch function here (then call it below) that gets this page's beanie baby and injects it into state using the correct state handler
     async function beaniePage() {
       const data = await getSingleBeanie(params.id);
-      console.log('🚀 ~ file: BeanieDetail.js ~ line 16 ~ beaniePage ~ data', data);
+      // console.log('🚀 ~ file: BeanieDetail.js ~ line 16 ~ beaniePage ~ data', data);
       setCurrentBeanieBaby(data);
     }
 
