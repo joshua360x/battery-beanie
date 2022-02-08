@@ -3,12 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import BeaniesPage from './BeaniesPage';
 import BeanieDetail from './BeanieDetail';
 import './App.css';
-import { getBeanieBabies } from './services/fetch-utils';
 
-async function beanies() {
-  const beanieBabies = await getBeanieBabies();
-  return beanieBabies;
-}
 
 export default function App() {
   return (

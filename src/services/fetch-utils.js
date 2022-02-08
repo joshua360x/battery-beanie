@@ -9,6 +9,14 @@ export async function getBeanieBabies(from = 0, to = 30) {
   return checkError(response);
 }
 
+export async function getALLBeanieBabies() {
+  const response = await client
+    .from('beanie_babies')
+    .select();
+
+  return checkError(response);
+}
+
 export async function getSingleBeanie(id) {
   const response = await client
     .from('beanie_babies')
