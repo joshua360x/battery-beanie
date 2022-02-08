@@ -6,14 +6,30 @@ import BeaniesList from './BeaniesList';
 function App() {
   const [beanieBabies, setBeanieBabies] = useState([]);
   const [page, setPage] = useState(1);
+  const [allBennies, setAllBennies] = useState(0);
   const perPage = 500;
 
-  async function maxNumber() {
-    const allBeanies = await getALLBeanieBabies();
-    const calc = allBeanies.length / perPage;
+  function maxNumber(page, allBeanies, perPage) {
+    // const allBeanies = await getALLBeanieBabies();
+    const calc = allBeanies / perPage;
     console.log('🚀 ~ file: BeaniesPage.js ~ line 14 ~ maxNumber ~ calc', calc);
-    return calc;
+    if (page >= calc) {
+      console.log('is it true?');
+      return true;
+    } else {
+      console.log('is it false?');
+      return false;
+    }
+    // page > maxNumber() && true
   }
+
+  useEffect(() => {
+    async function getAllBeanies() {
+      const allBeanies = await getALLBeanieBabies();
+      setAllBennies(allBeanies.length);
+    }
+    getAllBeanies();
+  }, []);
 
   useEffect(() => {
     async function fetch() {
@@ -25,7 +41,7 @@ function App() {
     }
 
     fetch();
-  }, [page]); // what can you do with this array to trigger a fetch every time the page changes?
+  }, [page, allBennies]); // what can you do with this array to trigger a fetch every time the page changes?
 
   return (
     <>
@@ -37,7 +53,7 @@ function App() {
           Previous Page
         </button>
         {/* on click, this button should increment the page in state  */}
-        <button disabled={page > maxNumber()} onClick={() => setPage(page + 1)}>
+        <button disabled={maxNumber(page, allBennies, perPage)} onClick={() => setPage(page + 1)}>
           Next Page
         </button>
       </div>
